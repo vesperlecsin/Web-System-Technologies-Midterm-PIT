@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vesper Moog · UI/UX Designer | Cosmic Interactive Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <!-- External CSS & JS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Interactive Universe Background -->
+<canvas id="universeCanvas"></canvas>
+
+<div class="resume-container">
+  <nav class="nav-bar">
+    <div class="nav-brand">
+      <img src="../IT2R10 Moog Resume/assets/vesper.jpg" alt="Vesper Moog profile photo" class="nav-avatar">
+      <span>VESPER LECSIN S. MOOG</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button id="darkModeToggle" class="dark-mode-btn">
+      <i class="fas fa-sun"></i> <span>Light Mode</span>
+    </button>
+  </nav>
+
+  <div class="content">
+    <div class="personal-greeting">
+      <span><i class="fas fa-hand-peace"></i> Hello, <span id="visitorNameSpan">Explorer</span>! Welcome to my cosmic universe.</span>
+      <button class="ask-name-btn" id="setNameBtn"><i class="fas fa-user-edit"></i> Introduce yourself</button>
+    </div>
+
+    <section id="about" class="section">
+      <h2><i class="fas fa-user-astronaut"></i> About</h2>
+      <div class="about-text">
+        A Junior UI/UX Designer with 2 years of experience shipping products used by 100M+ users. I bridge the gap between elegant design and powerful engineering, creating digital experiences that are not just functional — but unforgettable. A designer with a passion for AI-driven interfaces and inclusive design.
+      </div>
+    </section>
+
+    <section id="education" class="section">
+      <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+      <div class="edu-grid">
+        <div class="edu-card">
+          <h3>MSc in Digital Experience Innovation</h3>
+          <div class="institution">University of Oxford | 2028-2030</div>
+          <p>First-class honours. Thesis on AI-mediated user interfaces. Specialized in human-computer interaction.</p>
+        </div>
+        <div class="edu-card">
+          <h3>BS in Information Technology</h3>
+          <div class="institution">USTP | 2024-2028</div>
+          <p>Graduated with Honors. Thesis on AI-driven design tools.</p>
+        </div>
+        <div class="edu-card">
+          <h3>Meta Frontend Certificate</h3>
+          <div class="institution">Meta | 2027</div>
+          <p>Advanced React, accessibility patterns, advanced CSS architecture, performance optimization.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
+      <div class="exp-grid">
+        <div class="exp-card">
+          <div class="exp-header">
+            <i class="fab fa-google" style="font-size: 2rem;"></i>
+            <div>
+              <h3>Senior Product Designer</h3>
+              <span class="company">Google · Mountain View, CA</span>
+              <span class="date">2028 – Present</span>
+            </div>
+          </div>
+          <ul>
+            <li>Led redesign of Google Workspace mobile suite, increasing user engagement by 28%.</li>
+            <li>Collaborated with 12+ cross-functional teams to ship accessible components used by 50M+ users.</li>
+            <li>Mentored 5 junior designers and established design system governance.</li>
+          </ul>
+        </div>
+        <div class="exp-card">
+          <div class="exp-header">
+            <i class="fab fa-facebook" style="font-size: 2rem;"></i>
+            <div>
+              <h3>UI Engineer & Product Designer</h3>
+              <span class="company">Facebook (Meta) · London, UK</span>
+              <span class="date">2026 – 2028</span>
+            </div>
+          </div>
+          <ul>
+            <li>Designed and shipped features for Facebook Groups, boosting daily active interactions by 22%.</li>
+            <li>Built reusable React component libraries used by 20+ internal teams.</li>
+            <li>Conducted usability testing with 200+ participants, iterating designs based on data.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <h2><i class="fas fa-code"></i> Technical Skills</h2>
+      <div class="skills-pill" id="skillsContainer">
+        <span class="skill-item">React.js</span>
+        <span class="skill-item">Figma</span>
+        <span class="skill-item">TypeScript</span>
+        <span class="skill-item">Node.js</span>
+        <span class="skill-item">Python</span>
+        <span class="skill-item">UI/UX Research</span>
+        <span class="skill-item">Framer</span>
+        <span class="skill-item">Tailwind CSS</span>
+        <span class="skill-item">jQuery</span>
+        <span class="skill-item">Git/GitHub</span>
+        <span class="skill-item">TensorFlow</span>
+        <span class="skill-item">Flutter</span>
+      </div>
+      <div style="margin-top: 18px;">
+        <input type="text" id="skillFilter" class="filter-input" placeholder="🔍 Filter skills...">
+        <button id="resetSkillsBtn" class="reset-btn"><i class="fas fa-undo-alt"></i> Reset</button>
+      </div>
+    </section>
+
+    <!-- IMPRESSIVE PROJECTS SECTION -->
+    <section id="projects" class="section">
+      <h2><i class="fas fa-laptop-code"></i> Featured Projects</h2>
+      <div class="filter-buttons">
+        <button class="filter-btn active-filter" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="ai">AI/ML</button>
+        <button class="filter-btn" data-filter="web">Web Apps</button>
+        <button class="filter-btn" data-filter="mobile">Mobile</button>
+        <button class="filter-btn" data-filter="ar">AR/VR</button>
+      </div>
+      <div class="projects-grid" id="projectsGrid"></div>
+      <div class="extra-projects-toggle">
+        <button id="toggleExtraProjects" class="toggle-projects-btn"><i class="fas fa-plus-circle"></i> Show archived projects</button>
+      </div>
+      <div id="hiddenProjectsArea" class="hidden-projects">
+        <div class="projects-grid" id="archivedGrid"></div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2><i class="fas fa-envelope-open-text"></i> Contact</h2>
+      <div class="contact-row">
+        <div class="contact-message">
+          <h3><i class="fas fa-comment-dots"></i> Let's create magic ✨</h3>
+          <p>Available for freelance collaborations, speaking engagements, and creative projects. I'd love to bring your ideas to life.</p>
+          <div style="margin-top: 1.5rem;">
+            <i class="fab fa-github"></i> github.com/vespermoog<br>
+            <i class="fab fa-linkedin"></i> linkedin.com/in/vespermoog<br>
+          </div>
+        </div>
+        <div class="contact-form-area">
+          <h3><i class="fas fa-paper-plane"></i> Send a message</h3>
+          <p>I'll get back to you within 24 hours.</p>
+          <form id="contactForm">
+            <div class="form-group">
+              <input type="text" id="formName" placeholder="Your name *">
+            </div>
+            <div class="form-group">
+              <input type="email" id="formEmail" placeholder="Email address *">
+            </div>
+            <div class="form-group">
+              <textarea rows="3" id="formMessage" placeholder="Tell me about your project *"></textarea>
+            </div>
+            <button type="submit" class="send-btn"><i class="fas fa-paper-plane"></i> Send Message</button>
+            <div id="formFeedback" class="form-feedback"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+  <footer>
+    © 2026 Vesper Moog — UI/UX Designer
+  </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
